@@ -1,0 +1,57 @@
+.module {
+    box-sizing: border-box;
+    border: 1px solid rgb(234, 93, 23);
+    border-radius: 8px;
+    width: 80%;
+    height: 80px;
+    padding: 0 20px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+
+    &-available {
+        height: 30px;
+        display: flex;
+        align-items: center;
+
+        &-quantity {
+            margin-left: 10px;
+            font-weight: 600;
+        }
+    }
+
+    &-content {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr 1fr;
+        align-items: center;
+
+        &-checkbox {
+            justify-self: flex-start;
+        }
+
+        &-name {
+            font-weight: 500;
+        }
+
+        &-count {
+            justify-self: center;
+
+            &-increase {
+                width: 50px;
+                background-color: rgb(166, 187, 24);
+            }
+            &-decrease {
+                width: 50px;
+                background-color: rgb(228 103 103);
+            }
+            &-value{
+                margin: 0 10px;
+            }
+        }
+
+        &-price {
+            justify-self: flex-end;
+        }
+    }
+}

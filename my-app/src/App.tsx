@@ -1,11 +1,16 @@
-import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import SolarModules from './components/SolarModules/SolarModules'
+import SubmissionForm from './components/SubmissionForm/SubmissionForm'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SolarModules />} />
+        <Route path="/submission" element={<SubmissionForm />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App

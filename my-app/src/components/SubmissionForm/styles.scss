@@ -1,0 +1,67 @@
+.submission-page{
+
+    &-navigation {
+        width: 80px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 40px;
+        background-color: rgb(189, 98, 52);
+        border-radius: 8px;
+        
+        &-link {
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    &-header{
+        display: flex;
+        justify-content: center;
+    }
+    
+
+    &-form {
+        box-sizing: border-box;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    
+        &-pair-field {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    
+        &-group {
+            display: flex;
+            flex-direction: column;
+            margin: 10px 20px;
+        }
+    
+        &-field {
+            width: 100%;
+            height: 40px;
+            border-radius: 8px;
+            padding: 0 5px;
+            
+            &::placeholder{
+                padding: 0 5px;
+            }
+        }
+    
+        &-total-price {
+            justify-self: center;
+            font-size: 18px;
+        }
+    
+        &-submit {
+            justify-self: flex-end;
+            width: 120px;
+            height: 30px;
+            background-color: rgb(234, 93, 23);
+            color: white;
+            margin-right: 20px;
+        }
+    }
+}
