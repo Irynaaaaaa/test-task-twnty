@@ -3,9 +3,10 @@ import { initialValues, validationSchema } from './config'
 import './styles.scss'
 import { useAppSelector } from '../../redux/hooks'
 import SolarModule from '../SolarModule/SolarModule'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const SubmissionForm = () => {
+  const navigate = useNavigate()
   const { selectedModules } = useAppSelector((state) => state.modules)
 
   const totalPrice = Object.values(selectedModules).reduce(
@@ -15,11 +16,12 @@ const SubmissionForm = () => {
 
   return (
     <div className="submission-page">
-      <div className="submission-page-navigation">
-        <Link className="submission-page-navigation-link" to="/">
-          Go back
-        </Link>
-      </div>
+      <button
+        className="submission-page-navigation"
+        onClick={() => navigate('/')}
+      >
+        Go back
+      </button>
       <h1 className="submission-page-header">Submit the order</h1>
       <Formik
         initialValues={initialValues}

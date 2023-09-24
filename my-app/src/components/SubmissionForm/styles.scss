@@ -3,17 +3,9 @@
     &-navigation {
         width: 80px;
         height: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         margin: 20px 40px;
         background-color: rgb(189, 98, 52);
-        border-radius: 8px;
-        
-        &-link {
-            text-decoration: none;
-            color: white;
-        }
+        color: white;
     }
 
     &-header{
