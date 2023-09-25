@@ -1,15 +1,23 @@
+import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import SolarModules from './components/SolarModules/SolarModules'
-import SubmissionForm from './components/SubmissionForm/SubmissionForm'
+
+const SolarModules = lazy(
+  () => import('./components/SolarModules/SolarModules')
+)
+const SubmissionForm = lazy(
+  () => import('./components/SubmissionForm/SubmissionForm')
+)
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<SolarModules />} />
-        <Route path="/submission" element={<SubmissionForm />} />
-      </Routes>
-    </BrowserRouter>
+    <Suspense fallback={<p>Loading...</p>}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<SolarModules />} />
+          <Route path="/submission" element={<SubmissionForm />} />
+        </Routes>
+      </BrowserRouter>
+    </Suspense>
   )
 }
 
